@@ -1,7 +1,13 @@
 {
-    "youtube-key": "",
-    "twitter-key": "",
-    "channel-name": "",
+    "youtube-api-key": "",
+    "twitter-api-key": "",
+    "twitter-api-secret": "",
+    "twitter-api-access-token": "",
+    "twitter-api-access-token-secret": "",
+    "twitter-api-bearer": "",
+    "channel-id": "",
+    "couch-db-url": "",
+    "couch-db-table": "",
     "tasks": [
         {
             "mode": "",
