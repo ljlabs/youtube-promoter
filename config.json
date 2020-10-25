@@ -1,0 +1,16 @@
+{
+    "youtube-key": "",
+    "twitter-key": "",
+    "channel-name": "",
+    "tasks": [
+        {
+            "mode": "",
+            "message-options": [
+                {
+                    "title-contains": "",
+                    "message": ""
+                }
+            ]
+        }
+    ]
+}
