@@ -9,6 +9,8 @@ to install requirements please execute
 ```
 pip install -r requirements.txt
 ```
+Similarly you will need access to a CouchDB instance please follow the steps outlined  
+https://docs.couchdb.org/en/stable/install/index.html
 
 ## How to use:
 The configuration of this application is simple and entirely handled by the  
