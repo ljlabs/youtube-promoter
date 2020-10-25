@@ -5,8 +5,10 @@ The hope is to build a large array of features which may be set using the
 *config.json* file alone.
 
 ## Requirements:
-1. *Couch DB*
-2. *Python 3*
+to install requirements please execute 
+```
+pip install -r requirements.txt
+```
 
 ## How to use:
 The configuration of this application is simple and entirely handled by the  
