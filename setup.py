@@ -16,7 +16,7 @@ setup(
         'Kyle Jordaan',
         'Liam Doult',
     ],
-    author_email='',
+    author_email='jordaan0@gmail.com',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python :: 3',
