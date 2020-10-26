@@ -1,6 +1,7 @@
 import couchdb
 from copy import deepcopy
 
+
 def filter_items(id, items):
     for item in items:
         if item['id'] == id:
@@ -21,7 +22,7 @@ class CouchHandler:
         for id in self.db:
             new_items = filter_items(id, new_items)
         return new_items
-    
+
     def upload(self, item):
         item['_id'] = item['id']
         self.db.save(item)
