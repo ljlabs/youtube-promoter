@@ -83,6 +83,9 @@ Install development version of `youtube-promoter`:
 
     python setup.py develop
 
+### Running
+
+    python -m youtube_promoter config.json
 
 ### Testing
 

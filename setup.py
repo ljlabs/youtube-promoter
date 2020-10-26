@@ -33,6 +33,7 @@ setup(
     install_requires=[
         "twython==3.8.2",
         "CouchDB==1.2",
+        "click"
     ],
     extras_require={
         'dev': ['check-manifest'],
