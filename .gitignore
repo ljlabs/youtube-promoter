@@ -131,3 +131,9 @@ config-hidden.json
 
 # Vim Ignore
 *.swp
+
+# VSCode Ignore
+.vscode
+
+deploy.sh
+*.zip

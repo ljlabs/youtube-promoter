@@ -16,7 +16,7 @@ setup(
         'Kyle Jordaan',
         'Liam Doult',
     ],
-    author_email='',
+    author_email='jordaan0@gmail.com',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python :: 3',
@@ -32,7 +32,8 @@ setup(
     python_requires='>=3.5, <4',
     install_requires=[
         "twython==3.8.2",
-        "CouchDB==1.2",
+        "requests",
+        "tornado==6.0.4",
         "click"
     ],
     extras_require={
