@@ -6,12 +6,16 @@ This is a basic tool which can be used for various youtube promotion tasks
 The hope is to build a large array of features which may be set using the
 *config.json* file alone.
 
+This package can be hosted via the cli by means of a Tornado API, or may
+be hosted with a third party cloud function provider such as AWS Lambda.
+
+This project uses youtube push notifications to automatically promote your
+newly created content.
+
 
 ## How to use:
 
 ### Installation
-
-**A running instance of [CouchDB](https://docs.couchdb.org/en/stable/install/index.html) is required**
 
     python setup.py install
 
@@ -30,8 +34,8 @@ Please use the *config.json*, set all of the keys and youtube channel names.
     "twitter-api-access-token-secret": "",
     "twitter-api-bearer": "",
     "channel-id": "",
-    "couch-db-url": "",
-    "couch-db-table": "",
+    "server-port": 0,
+    "pubsubhubhub_secret": "",
 }
 ```
 #### Tasks
@@ -86,6 +90,15 @@ Install development version of `youtube-promoter`:
 ### Running
 
     python -m youtube_promoter config.json
+
+now you will need to expose the port which you configure using the *config.json* file.
+I recommend using ngrok which can be found https://ngrok.com/
+ngrok will give you a public domain name which will allow anybody to access your server
+To connect your server to the youtube push notifications you will need to
+follow the steps described at https://developers.google.com/youtube/v3/guides/push_notifications
+**please not the pubsubhubhub_secret you set in the *config.json* will need to corrospond
+to the *Verify token* used when subscribing to youtube push notifications**
+ps this secret can be anything as long as they corrospond between these 2 locations
 
 ### Testing
 
