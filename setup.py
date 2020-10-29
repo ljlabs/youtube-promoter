@@ -33,6 +33,7 @@ setup(
     install_requires=[
         "twython==3.8.2",
         "requests",
+        "tornado==6.0.4",
         "click"
     ],
     extras_require={

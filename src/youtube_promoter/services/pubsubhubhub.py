@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as XML
-import os
 import json
 from youtube_promoter.handler.taskHandler import TaskHandler
 
@@ -17,7 +16,7 @@ def parse_video_params(entry):
     return {"video_id": video_id, "title": title, "link": link}
 
 
-def subscribe(queryParameters):
+def subscribe(queryParameters, config):
     try:
         mode = queryParameters['hub.mode']
         challenge = queryParameters['hub.challenge']
@@ -25,17 +24,16 @@ def subscribe(queryParameters):
     except KeyError:
         return {'statusCode': 404, 'body': ''}
 
-    if mode == 'subscribe' and verify_token == secret:
+    if mode == 'subscribe' and verify_token == config["pubsubhubhub_secret"]:
         return {'statusCode': 200, 'body': challenge}
     return {'statusCode': 404, 'body': ''}
 
 
-def handleUpdate(bodyParams):
+def handleUpdate(bodyParams, config):
     root = XML.fromstring(bodyParams)
 
     for entry in root.findall('xmlns:entry', namespaces=namespaces):
         video = parse_video_params(entry)
-        config = json.loads(os.environ.get('config'))
         th = TaskHandler(config=config)
         for task in th.getTasks():
             task.process(video)
