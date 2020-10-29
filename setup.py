@@ -32,7 +32,7 @@ setup(
     python_requires='>=3.5, <4',
     install_requires=[
         "twython==3.8.2",
-        "CouchDB==1.2",
+        "requests",
         "click"
     ],
     extras_require={
