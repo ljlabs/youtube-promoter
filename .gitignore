@@ -132,3 +132,4 @@ config-hidden.json
 # Vim Ignore
 *.swp
 deploy.sh
+*.zip
