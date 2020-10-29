@@ -6,8 +6,8 @@
     "twitter-api-access-token-secret": "",
     "twitter-api-bearer": "",
     "channel-id": "",
-    "couch-db-url": "",
-    "couch-db-table": "",
+    "server-port": 0,
+    "pubsubhubhub_secret": "",
     "tasks": [
         {
             "mode": "",

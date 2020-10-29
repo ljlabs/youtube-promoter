@@ -49,6 +49,7 @@ def run(file: click.File):
     config = json.loads(file.read())
     print("starting :: server")
     app = make_app(config)
-    app.listen(8000)
+    server_port = config["server-port"]
+    app.listen(server_port)
+    print(f"INFO :: server running at port {server_port}")
     tornado.ioloop.IOLoop.current().start()
-    print("INFO :: server running")
