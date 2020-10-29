@@ -24,7 +24,7 @@ def subscribe(queryParameters, config):
     except KeyError:
         return {'statusCode': 404, 'body': ''}
 
-    if mode == 'subscribe' and verify_token == config["pubsubhubhub_secret"]:
+    if mode == 'subscribe' and verify_token == config["pubsubhubhub-secret"]:
         return {'statusCode': 200, 'body': challenge}
     return {'statusCode': 404, 'body': ''}
 

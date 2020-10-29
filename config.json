@@ -7,7 +7,7 @@
     "twitter-api-bearer": "",
     "channel-id": "",
     "server-port": 0,
-    "pubsubhubhub_secret": "",
+    "pubsubhubhub-secret": "",
     "tasks": [
         {
             "mode": "",

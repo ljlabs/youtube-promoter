@@ -5,6 +5,7 @@ import tornado.web
 import xml.etree.ElementTree as XML
 from youtube_promoter.services.pubsubhubhub import subscribe, handleUpdate
 from youtube_promoter.handler.taskHandler import TaskHandler
+from youtube_promoter.model.params import Params
 
 namespaces = {
     'yt': 'http://www.youtube.com/xml/schemas/2015',
@@ -47,6 +48,7 @@ def make_app(config):
 def run(file: click.File):
     print("starting")
     config = json.loads(file.read())
+    Params.testConfigValidity(config)
     print("starting :: server")
     app = make_app(config)
     server_port = config["server-port"]

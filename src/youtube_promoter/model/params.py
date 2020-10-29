@@ -1,16 +1,21 @@
 class Params:
     def __init__(self, config):
-        self.youtube_key = config["youtube-api-key"]
-        self.twitter_key = config["twitter-api-key"]
-        self.twitter_secret = config["twitter-api-secret"]
-        self.twitter_bearer = config["twitter-api-bearer"]
-        self.twitter_api_access_token = config["twitter-api-access-token"]
-        self.twitter_api_access_token_secret = config[
-            "twitter-api-access-token-secret"]
-        self.channel_id = config["channel-id"]
-        self.couch_db_url = config["couch-db-url"]
-        self.couch_db_table = config["couch-db-table"]
+        self.youtube_key = config.get("youtube-api-key", "")
+        self.twitter_key = config.get("twitter-api-key", "")
+        self.twitter_secret = config.get("twitter-api-secret", "")
+        self.twitter_bearer = config.get("twitter-api-bearer", "")
+        self.twitter_api_access_token = config.get("twitter-api-access-token",
+                                                   "")
+        self.twitter_api_access_token_secret = config.get(
+            "twitter-api-access-token-secret", "")
+        self.channel_id = config.get("channel-id", "")
+        self.server_port = config.get("server-port", 0)
+        self.pubsubhubhub_secret = config.get("pubsubhubhub-secret", "")
         self.check_state_validity()
+
+    @classmethod
+    def testConfigValidity(cls, config):
+        Params(config)
 
     def check_state_validity(self):
         if self.youtube_key == "":
@@ -27,7 +32,7 @@ class Params:
             raise Exception("please set twitter-api-bearer")
         if self.channel_id == "":
             raise Exception("please set channel-id")
-        if self.couch_db_url == "":
-            raise Exception("please set couch-db-url")
-        if self.couch_db_table == "":
-            raise Exception("please set couch-db-table")
+        if self.server_port == "":
+            raise Exception("please set server-port")
+        if self.pubsubhubhub_secret == "":
+            raise Exception("please set pubsubhubhub-secret")

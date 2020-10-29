@@ -35,7 +35,7 @@ Please use the *config.json*, set all of the keys and youtube channel names.
     "twitter-api-bearer": "",
     "channel-id": "",
     "server-port": 0,
-    "pubsubhubhub_secret": "",
+    "pubsubhubhub-secret": "",
 }
 ```
 #### Tasks
@@ -96,7 +96,7 @@ I recommend using ngrok which can be found https://ngrok.com/
 ngrok will give you a public domain name which will allow anybody to access your server
 To connect your server to the youtube push notifications you will need to
 follow the steps described at https://developers.google.com/youtube/v3/guides/push_notifications
-**please not the pubsubhubhub_secret you set in the *config.json* will need to corrospond
+**please not the pubsubhubhub-secret you set in the *config.json* will need to corrospond
 to the *Verify token* used when subscribing to youtube push notifications**
 ps this secret can be anything as long as they corrospond between these 2 locations
 
