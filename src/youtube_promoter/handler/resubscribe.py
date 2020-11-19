@@ -33,18 +33,8 @@ class Resubscribe:
 
         response = requests.request("POST", url, headers=headers, data=payload)
 
-        print(response.text)
-
-
-if __name__ == "__main__":
-    resub = Resubscribe(options={
-        "callback":
-        "https://tys2d1kiwc.execute-api.us-east-2.amazonaws.com/prod/youtube-callback",
-        "topic":
-        "https://www.youtube.com/xml/feeds/videos.xml?channel_id=UCyi-1SDaJxVG3SG9N1VvRsA",
-        "verify_token": "some_url_safe_secret",
-        "secret": "",
-        "lease_seconds": 31536000
-    },
-                        params={})
-    resub.process()
+        if response.text == "":
+            print("Successfully resubscribed to pubsubhubhub server")
+        else:
+            print("An error occured when subscribing to pubsubhubhubServer")
+            print(response.text)
