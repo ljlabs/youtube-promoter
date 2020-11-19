@@ -11,7 +11,7 @@
     "tasks": [
         {
             "mode": "",
-            "message-options": [
+            "options": [
                 {
                     "title-contains": "",
                     "message": ""

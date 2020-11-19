@@ -6,6 +6,7 @@ import xml.etree.ElementTree as XML
 from youtube_promoter.services.pubsubhubhub import subscribe, handleUpdate
 from youtube_promoter.handler.taskHandler import TaskHandler
 from youtube_promoter.model.params import Params
+from youtube_promoter.handler.resubscribe import Resubscribe
 
 namespaces = {
     'yt': 'http://www.youtube.com/xml/schemas/2015',
@@ -16,6 +17,10 @@ namespaces = {
 class MainHandler(tornado.web.RequestHandler):
     def initialize(self, config):
         self.config = config
+
+    def link(self):
+        resubscribe = Resubscribe(options=task["options"], params=self.params)
+        resubscribe.process()
 
     def get(self):
         resp = subscribe(

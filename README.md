@@ -45,7 +45,7 @@ The system runs a particular set of tasks which are defined as
     "tasks": [
         {
             "mode": "",
-            "message-options": [
+            "options": [
                 {
                     "title-contains": "",
                     "message": ""
@@ -62,8 +62,15 @@ to twitter
     >A. `title-contains` is used to display different messages based on a particular title.
     Leave blank if not needed
     B. `message` is used to post to twitter please use the keywords listed below to get data from the video
-    >    * *TITLE* will be replaced with the video title
+    >    * *TITLE* will be replaced with the video  title
     >    * *URL* will be replaced with the videos URL
+2. `RESUBSCRIBE` will resubscribe to pubsubhubhub (currently only gets triggered by a pubsubhubhub event)
+for more details please checkout [YouTube Data API (v3) push notifications](https://developers.google.com/youtube/v3/guides/push_notifications)
+    >A. `callback` Is the URL of the endpoint that this service is hosted at
+    >B. `topic` Is https://www.youtube.com/xml/feeds/videos.xml?channel_id=CHANNEL_ID, Where CHANNEL_ID, is the ID of your youtube channel
+    >C. `verify_token` must be the same as the value set in *pubsubhubhub-secret*
+    >D. `secret` should be empty
+    >E. `lease_seconds` should be set to *31536000*, i.e. 1 year in seconds
 
 ## Contribution
 

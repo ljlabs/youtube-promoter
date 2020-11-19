@@ -34,7 +34,7 @@ def handleUpdate(bodyParams, config):
 
     for entry in root.findall('xmlns:entry', namespaces=namespaces):
         video = parse_video_params(entry)
-        th = TaskHandler(config=config)
+        th = TaskHandler(config=config, video=video)
         for task in th.getTasks():
-            task.process(video)
+            task.process()
     return {'statusCode': 404, 'body': 'Goodly'}

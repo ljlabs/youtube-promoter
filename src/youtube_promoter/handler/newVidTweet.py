@@ -18,19 +18,20 @@ def parse_message(template, video):
 
 
 class NewVidTweet:
-    def __init__(self, message_options, params: Params):
-        self.message_options = message_options
+    def __init__(self, options, params: Params, video):
+        self.options = options
         self.params = params
+        self.video = video
         self.channel_upload_id = get_channel_upload_id(
             api_key=self.params.youtube_key, channel_id=self.params.channel_id)
         self.new_videos = []
 
-    def get_tweet(self, video):
-        for option in self.message_options:
-            if option["title-contains"] in video['title']:
-                yield parse_message(option['message'], video)
+    def get_tweet(self):
+        for option in self.options:
+            if option["title-contains"] in self.video['title']:
+                yield parse_message(option['message'], self.video)
 
-    def process(self, video):
+    def process(self):
         th = TwitterHandler(params=self.params)
-        for tweet in self.get_tweet(video):
+        for tweet in self.get_tweet():
             th.post_tweet(tweet)
